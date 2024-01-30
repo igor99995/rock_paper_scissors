@@ -40,5 +40,36 @@ function gameRound(playerSelection, computerSelection) {
             result = "You won! Scissors beats paper"
         }
     }
-    return result
+    return result 
 }
+
+function playGame() {
+    let userChoice = prompt("Choose your weapon: ", "")
+    let computerChoice = getComputerChoice()
+    let userScore = 0
+    let computerScore = 0 
+        let gameResult = gameRound(userChoice, computerChoice)
+        if (gameResult.includes("You won")) {
+            userScore++
+            console.log(gameResult)
+        }
+        else if (gameResult.includes("You lost")) {
+            computerScore++
+            console.log(gameResult)
+        }
+
+    
+}   
+
+
+
+
+
+
+    /*let gameResult = gameRound(userChoice, computerChoice)
+    if (gameResult.includes("You won")) {
+        userScore++
+    }
+    else if (gameResult.includes("You lost")) {
+        computerScore++
+    }*/
