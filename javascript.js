@@ -44,32 +44,25 @@ function gameRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    let userChoice = prompt("Choose your weapon: ", "")
-    let computerChoice = getComputerChoice()
     let userScore = 0
-    let computerScore = 0 
+    let computerScore = 0
+    while (userScore < 5 && computerScore < 5) {
+        let userChoice = prompt("Choose your weapon:", "")
+        let computerChoice = getComputerChoice()
         let gameResult = gameRound(userChoice, computerChoice)
         if (gameResult.includes("You won")) {
             userScore++
-            console.log(gameResult)
+            console.log(gameResult + `\nYour score: ${userScore}\nComputer score: ${computerScore}`)
         }
         else if (gameResult.includes("You lost")) {
             computerScore++
-            console.log(gameResult)
+            console.log(gameResult + `\nYour score: ${userScore}\nComputer score: ${computerScore}`)
+        }
+        else {
+            console.log(gameResult + `\nYour score: ${userScore}\nComputer score: ${computerScore}`)
         }
 
-    
-}   
-
-
-
-
-
-
-    /*let gameResult = gameRound(userChoice, computerChoice)
-    if (gameResult.includes("You won")) {
-        userScore++
+        if(userScore === 5) {console.log (`Congratulations!!!\n\nYou won the rock,paper and scissors with a score of: ${userScore}`)};
+        if(computerScore === 5) {console.log(`You stupid mf!!!\n\nJust lost to a machine with the poor score of: ${userScore}`)};
     }
-    else if (gameResult.includes("You lost")) {
-        computerScore++
-    }*/
+}   
