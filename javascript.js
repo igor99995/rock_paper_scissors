@@ -5,6 +5,7 @@ function getComputerChoice() {
 }
 
 function gameRound(playerSelection, computerSelection) {
+    computerSelection = getComputerChoice()
     playerSelection = playerSelection.toLowerCase()
     computerSelection = computerSelection.toLowerCase()
     let result
@@ -67,4 +68,12 @@ function playGame() {
     }
 }
 
-playGame();
+let btnRock = document.querySelector('#rock')
+let btnPaper = document.querySelector('#paper')
+let btnScissors = document.querySelector('#scissors')
+let buttons = document.querySelector('#buttons')
+
+buttons.addEventListener('click', (e) => {
+    let btnChoice = e.target.getAttribute('id')
+    console.log(gameRound(btnChoice))
+})
